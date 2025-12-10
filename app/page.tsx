@@ -293,12 +293,16 @@ export default function Home() {
             HÃY NUÔI FE NGAY HÔM NAY! 💚
           </p>
           <p
-            className="mx-auto max-w-2xl px-4 text-lg text-gray-400 sm:text-xl md:text-2xl">
+            className="mx-auto max-w-3xl px-4 text-lg text-gray-400 sm:text-xl md:text-2xl">
             FE cam kết công khai 100% đồ ăn!
           </p>
           <p
-            className="mx-auto max-w-2xl px-4 text-lg text-gray-400 sm:text-xl md:text-2xl">
-           💸 Không chỉ là donate, mà là chữa lành những tâm hồn đã rách!
+            className="mx-auto max-w-3xl mt-1 px-4 text-lg text-gray-400 sm:text-xl md:text-2xl">
+           Không chỉ là donate, mà là chữa lành những tâm hồn đã rách!
+          </p>
+          <p
+            className="mx-auto max-w-3xl px-4 text-lg text-gray-400 sm:text-xl md:text-2xl">
+          💯
           </p>
         </section>
 

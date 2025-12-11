@@ -25,10 +25,10 @@ export const metadata: Metadata = {
     siteName: "Nuôi FE",
     images: [
       {
-        url: "/QR.jpg",
-        width: 1024,
-        height: 1024,
-        alt: "Mã QR donate Nuôi FE",
+        url: "/og.webp",
+        width: 1200,
+        height: 630,
+        alt: "Nuôi FE – Feed the Dev, Save the code",
       },
     ],
     type: "website",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Nuôi FE – Feed the Dev, Save the code",
     description:
       "Mỗi đóng góp của bạn giúp một dev sống sót thêm một sprint. Một dev khỏe cả dự án vui 💚",
-    images: ["/QR.jpg"],
+    images: ["/og.webp"],
   },
 };
 

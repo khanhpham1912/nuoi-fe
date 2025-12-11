@@ -126,7 +126,7 @@ const PricingCard = ({
     >
       {premium && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 px-4 py-1 text-sm font-bold text-white shadow-lg animate-pulse">
-          ⭐ Premium Pro Plus ⭐
+          ⭐ Premium Pro Plus
         </div>
       )}
       {popular && !premium && (

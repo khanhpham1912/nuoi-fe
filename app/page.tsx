@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useState, useMemo, useEffect } from "react";
+import Image from "next/image";
+import { useRef, useState, useEffect } from "react";
 
 // Custom Intersection Observer hook
 const useInView = (ref: React.RefObject<HTMLElement | null>, options?: { once?: boolean; margin?: string }) => {
@@ -231,23 +232,8 @@ const FAQItem = ({ question, answer, index }: { question: string; answer: string
 };
 
 export default function Home() {
-  const [showQR, setShowQR] = useState(false);
+  const donateRef = useRef<HTMLDivElement | null>(null);
   const [feCode, setFeCode] = useState("FE-00000");
-  // Fixed QR pattern (8x8 grid)
-  const qrPattern = useMemo(() => {
-    // Create a pattern that looks like a QR code
-    const pattern = [
-      1, 1, 1, 1, 1, 1, 1, 1,
-      1, 0, 0, 0, 0, 0, 0, 1,
-      1, 0, 1, 1, 1, 1, 0, 1,
-      1, 0, 1, 0, 0, 1, 0, 1,
-      1, 0, 1, 0, 0, 1, 0, 1,
-      1, 0, 1, 1, 1, 1, 0, 1,
-      1, 0, 0, 0, 0, 0, 0, 1,
-      1, 1, 1, 1, 1, 1, 1, 1,
-    ];
-    return pattern;
-  }, []);
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
@@ -273,6 +259,12 @@ export default function Home() {
                 <p className="text-xs text-gray-400">Frontend Development Fund</p>
               </div>
             </div>
+            <button
+              onClick={() => donateRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })}
+              className="hidden items-center gap-2 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 active:scale-95 sm:inline-flex"
+            >
+              Donate ngay 💚
+            </button>
           </div>
         </div>
       </header>
@@ -513,7 +505,9 @@ export default function Home() {
 
         {/* Donate Section */}
         <ScrollSection className="mb-24">
-          <div className="relative overflow-hidden rounded-3xl border-2 border-green-700/30 bg-gradient-to-br from-green-800/80 via-emerald-800/80 to-green-800/80 p-8 text-center text-white shadow-2xl sm:p-10 md:p-12">
+          <div
+            ref={donateRef}
+            className="relative overflow-hidden rounded-3xl border-2 border-green-700/30 bg-gradient-to-br from-green-800/80 via-emerald-800/80 to-green-800/80 p-8 text-center text-white shadow-2xl sm:p-10 md:p-12">
             {/* Animated Background Elements */}
             <div className="absolute inset-0 overflow-hidden">
               <div
@@ -562,41 +556,25 @@ export default function Home() {
                     <div className="absolute bottom-2 left-2 h-6 w-6 border-b-2 border-l-2 border-green-600 opacity-50" />
                     <div className="absolute bottom-2 right-2 h-6 w-6 border-b-2 border-r-2 border-green-600 opacity-50" />
 
-                    <div
-                      className="relative flex h-64 w-64 items-center justify-center rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 shadow-inner sm:h-72 sm:w-72"
-                    >
-                      {/* QR Code Pattern Placeholder */}
-                      {showQR ? (
-                        <div
-                          className="grid grid-cols-8 gap-1 p-4">
-                          {qrPattern.map((value, i) => (
-                            <div
-                              key={i}
-                              className="h-4 w-4 rounded-sm bg-gray-800"
-                            />
-                          ))}
-                        </div>
-                      ) : (
-                        <span
-                          className="text-7xl sm:text-8xl">
-                          💚
-                        </span>
-                      )}
+                    <div className="relative flex h-64 w-64 items-center justify-center rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 shadow-inner sm:h-72 sm:w-72">
+                      {/* QR Code display */}
+                      <Image
+                        src="/QR.jpg"
+                        alt="QR code để donate cho FE"
+                        width={512}
+                        height={512}
+                        className="h-full w-full rounded-xl object-cover shadow-lg"
+                        priority
+                      />
                     </div>
                     
                     <p
                       className="mt-4 text-base font-semibold text-gray-800 sm:text-lg">
-                      {showQR ? "📱 Quét mã QR để donate" : "👆 Nhấn để hiển thị QR Code"}
+                      📱 Quét mã QR để donate
                     </p>
                   </div>
                 </div>
               </div>
-
-              {/* Toggle Button */}
-              <button
-                onClick={() => setShowQR(!showQR)} className="mb-8 rounded-full border-2 border-white bg-white px-12 py-4 text-lg font-bold text-green-600 shadow-xl transition-all hover:bg-gray-50 sm:px-14 sm:py-5 sm:text-xl">
-                {showQR ? "🙈 Ẩn QR Code" : "👁️ Hiển Thị QR Code"}
-              </button>
 
         </div>
           </div>

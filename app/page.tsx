@@ -270,15 +270,12 @@ export default function Home() {
               {/* Description */}
               <p className="mb-8 px-4 text-base font-medium text-gray-100 sm:text-lg md:text-xl">Quét mã QR để nuôi FE ngay hôm nay! 💚</p>
 
-              {/* QR Code Container */}
+              {/* QR / Deeplink */}
               <div className="mb-8 flex justify-center">
-                <div className="relative">
-                  {/* Glow effect */}
+                {/* Desktop & tablet: show QR image */}
+                <div className="relative hidden md:block">
                   <div className="absolute inset-0 rounded-3xl bg-white blur-2xl" />
-
-                  {/* QR Card */}
                   <div className="relative rounded-3xl border-4 border-white/90 bg-white p-6 shadow-2xl backdrop-blur-sm sm:p-8">
-                    {/* Decorative corners */}
                     <div className="absolute left-2 top-2 h-6 w-6 border-l-2 border-t-2 border-green-600 opacity-50" />
                     <div className="absolute right-2 top-2 h-6 w-6 border-r-2 border-t-2 border-green-600 opacity-50" />
                     <div className="absolute bottom-2 left-2 h-6 w-6 border-b-2 border-l-2 border-green-600 opacity-50" />
@@ -294,9 +291,18 @@ export default function Home() {
                         priority
                       />
                     </div>
-
                     <p className="mt-4 text-base font-semibold text-gray-800 sm:text-lg">📱 Quét mã QR để donate</p>
                   </div>
+                </div>
+
+                <div className="w-full max-w-md md:hidden">
+                  <a
+                    href="https://dl.vietqr.io/pay?app=msb&ba=taikhoantest@tpb&bn=NGUYEN%20THAI%20HOA&am=200000&tn=camonvidaden&url=https%3A%2F%2Fwww.nuoife.com"
+                    className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-5 text-lg font-bold text-white shadow-lg transition-all hover:scale-[1.02] active:scale-95"
+                  >
+                    🚀 Donate ngay thôi
+                  </a>
+                  <p className="mt-3 text-sm text-gray-200">Tất cả vì sự tiện lợi của mạnh thường 💚 </p>
                 </div>
               </div>
             </div>

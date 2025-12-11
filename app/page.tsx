@@ -13,13 +13,14 @@ import {
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nuoi-fe.example";
 
 export const metadata: Metadata = {
-  title: "Nuôi FE | Frontend Development Fund",
-  description: "Quét mã QR để nuôi FE, minh bạch 100% và vui nhộn.",
-  keywords: ["Nuôi FE", "donate frontend", "quỹ frontend", "QR donate", "Nuôi FE QR"],
+  title: "Nuôi FE – Feed the Dev, Save the code",
+  description:
+    "Mỗi đóng góp của bạn giúp một dev sống sót thêm một sprint. Một dev khỏe cả dự án vui 💚",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Nuôi FE | Frontend Development Fund",
-    description: "Ủng hộ FE qua mã QR, theo dõi minh bạch và vui tươi.",
+    title: "Nuôi FE – Feed the Dev, Save the code",
+    description:
+      "Mỗi đóng góp của bạn giúp một dev sống sót thêm một sprint. Một dev khỏe cả dự án vui 💚",
     url: siteUrl,
     siteName: "Nuôi FE",
     images: [
@@ -35,8 +36,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nuôi FE | Frontend Development Fund",
-    description: "Ủng hộ FE qua mã QR, theo dõi minh bạch và vui tươi.",
+    title: "Nuôi FE – Feed the Dev, Save the code",
+    description:
+      "Mỗi đóng góp của bạn giúp một dev sống sót thêm một sprint. Một dev khỏe cả dự án vui 💚",
     images: ["/QR.jpg"],
   },
 };
@@ -297,12 +299,12 @@ export default function Home() {
 
                 <div className="w-full max-w-md md:hidden">
                   <a
-                    href="https://dl.vietqr.io/pay?app=msb&ba=taikhoantest@tpb&bn=NGUYEN%20THAI%20HOA&am=200000&tn=camonvidaden&url=https%3A%2F%2Fwww.nuoife.com"
+                    href="https://dl.vietqr.io/pay?app=tpb&ba=taikhoantest@tpb&bn=NGUYEN%20THAI%20HOA&am=200000&tn=camonvidaden&url=https%3A%2F%2Fwww.nuoife.com"
                     className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-5 text-lg font-bold text-white shadow-lg transition-all hover:scale-[1.02] active:scale-95"
                   >
                     🚀 Donate ngay thôi
                   </a>
-                  <p className="mt-3 text-sm text-gray-200">Tất cả vì sự tiện lợi của mạnh thường 💚 </p>
+                  <p className="mt-3 text-sm text-gray-200">Tất cả vì sự tiện lợi của mạnh thường quân 💚 </p>
                 </div>
               </div>
             </div>

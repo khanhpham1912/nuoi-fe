@@ -298,8 +298,10 @@ export default function Home() {
                 </div>
 
                 <div className="w-full max-w-md md:hidden">
+                {/* https://dl.vietqr.io/pay?app=tpb&ba=03795230201@tpb&bn=NGUYEN%20THAI%20HOA&am=200000&tn=camonvidaden&url=https%3A%2F%2Fwww.nuoife.com*/}
                   <a
-                    href="https://dl.vietqr.io/pay?app=tpb&ba=taikhoantest@tpb&bn=NGUYEN%20THAI%20HOA&am=200000&tn=camonvidaden&url=https%3A%2F%2Fwww.nuoife.com"
+                    href="https://quy.momo.vn/v2/AODZIfEtEb?e14fe"
+                    target="_blank"
                     className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-5 text-lg font-bold text-white shadow-lg transition-all hover:scale-[1.02] active:scale-95"
                   >
                     🚀 Donate ngay thôi
